@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+
+:root {
+  --bg-color: #0a0a0a;
+  --text-color: #ffffff;
+  --neon-blue: #00ffff;
+  --neon-pink: #ff00ff;
+  --neon-green: #00ff00;
+  --grid-gap: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Orbitron", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue),
+    0 0 30px var(--neon-blue);
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  color: var(--neon-pink);
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 0 0 5px var(--neon-pink);
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--neon-green);
+  text-shadow: 0 0 10px var(--neon-green);
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green);
+}
+
+.neon-grid-2,
+.neon-grid-3,
+.neon-grid-4 {
+  display: grid;
+  gap: var(--grid-gap);
+}
+
+.neon-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.neon-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.neon-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--neon-blue);
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  box-shadow: 0 0 10px var(--neon-blue);
+  transition: all 0.3s ease;
+}
+
+.grid-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue);
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: var(--neon-pink);
+}
+
+@media (max-width: 1024px) {
+  .neon-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .neon-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .neon-grid-2,
+  .neon-grid-3,
+  .neon-grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
